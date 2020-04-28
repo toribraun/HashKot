@@ -3,12 +3,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HashKot : MonoBehaviour
+public class HashKot : Unit
 {
     [SerializeField]
     private float speed = 3F;
     [SerializeField]
     private float jumpforce = 15F;
+    [SerializeField]
+    private int pointsSum;
 
     private bool isGround;
 
@@ -50,5 +52,10 @@ public class HashKot : MonoBehaviour
     {
         Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, 0.3F);
         isGround = colliders.Length > 1;
+    }
+    
+    public void GetPoints(int points)
+    {
+        pointsSum += points;
     }
 }
