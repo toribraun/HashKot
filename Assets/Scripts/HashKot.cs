@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class HashKot : Unit
 {
@@ -12,6 +13,9 @@ public class HashKot : Unit
     [SerializeField]
     private int pointsSum;
 
+    [SerializeField] 
+    public Text pointsSumText; 
+
     private bool isGroundNear;
 
     private Rigidbody2D rigitbody;
@@ -21,6 +25,7 @@ public class HashKot : Unit
     {
         rigitbody = GetComponent<Rigidbody2D>();
         sprite = GetComponentInChildren<SpriteRenderer>();
+        pointsSumText.text = "0";
     }
 
     private void FixedUpdate()
@@ -59,5 +64,6 @@ public class HashKot : Unit
     public void GetPoints(int points)
     {
         pointsSum += points;
+        pointsSumText.text = pointsSum.ToString();
     }
 }
