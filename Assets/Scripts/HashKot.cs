@@ -51,7 +51,7 @@ public class HashKot : Unit
             speed * Time.deltaTime);
     }
 
-    private void Jump()
+    public void Jump()
     {
         rigitbody.AddForce(transform.up * jumpforce, ForceMode2D.Impulse);
     }
@@ -71,7 +71,11 @@ public class HashKot : Unit
     public void GetDamage(int damage)
     {
         if (damage <= pointsSum)
+        {
+            rigitbody.velocity = Vector3.zero;
+            rigitbody.AddForce(transform.right * 5, ForceMode2D.Impulse);
             GetPoints(-damage);
+        }
         //else
             //Destroy(gameObject);
     }

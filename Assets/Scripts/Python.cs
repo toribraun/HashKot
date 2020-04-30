@@ -14,8 +14,11 @@ public class Python : MonoBehaviour
 
         if (player)
         {
-            if (Math.Abs(player.transform.position.x - transform.position.x) < 0.3)
+            if (Math.Abs(player.transform.position.x - transform.position.x) > 1)
+            {
+                player.Jump();
                 Destroy(gameObject);
+            } 
             else
                 player.GetDamage(3);
         }
