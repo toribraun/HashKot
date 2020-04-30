@@ -25,6 +25,7 @@ public class HashKot : Unit
     {
         rigitbody = GetComponent<Rigidbody2D>();
         sprite = GetComponentInChildren<SpriteRenderer>();
+        pointsSum = 0;
         pointsSumText.text = "0";
     }
 
@@ -65,5 +66,13 @@ public class HashKot : Unit
     {
         pointsSum += points;
         pointsSumText.text = pointsSum.ToString();
+    }
+    
+    public void GetDamage(int damage)
+    {
+        if (damage <= pointsSum)
+            GetPoints(-damage);
+        //else
+            //Destroy(gameObject);
     }
 }
