@@ -6,13 +6,13 @@ using UnityEngine;
 public class HashKot : Unit
 {
     [SerializeField]
-    private float speed = 3F;
+    private float speed = 15F;
     [SerializeField]
-    private float jumpforce = 15F;
+    private float jumpforce = 75F;
     [SerializeField]
     private int pointsSum;
 
-    private bool isGround;
+    private bool isGroundNear;
 
     private Rigidbody2D rigitbody;
     private SpriteRenderer sprite;
@@ -32,15 +32,17 @@ public class HashKot : Unit
     {
         if (Input.GetButton("Horizontal"))
             Run();
-        if (Input.GetButtonDown("Jump"))
+        if (Input.GetButtonDown("Jump") || Input.GetKeyDown(KeyCode.UpArrow))
             Jump();
         
     }
 
     private void Run()
     {
-        Vector3 direction = transform.right * Input.GetAxis("Horizontal");
-        transform.position = Vector3.MoveTowards(transform.position, transform.position + direction, speed * Time.deltaTime);
+        transform.position = Vector3.MoveTowards(
+            transform.position, 
+            transform.position + transform.right * Input.GetAxis("Horizontal"), 
+            speed * Time.deltaTime);
     }
 
     private void Jump()
@@ -51,7 +53,7 @@ public class HashKot : Unit
     private void CheckGround()
     {
         Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, 0.3F);
-        isGround = colliders.Length > 1;
+        isGroundNear = colliders.Length > 1;
     }
     
     public void GetPoints(int points)

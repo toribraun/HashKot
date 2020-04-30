@@ -58,8 +58,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\FollowCamera.cs" />
      <Compile Include="Assets\Scripts\HashKot.cs" />
      <Compile Include="Assets\Scripts\Point.cs" />
+     <Compile Include="Assets\Scripts\Python.cs" />
      <Compile Include="Assets\Scripts\Unit.cs" />
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>/Users/victoriabraun/HashKot/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
