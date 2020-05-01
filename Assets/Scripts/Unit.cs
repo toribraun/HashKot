@@ -2,10 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Unit : MonoBehaviour
+namespace Assets.Scripts
 {
-    public virtual void Die()
+    public class Unit : MonoBehaviour
     {
-        Destroy(gameObject);
+        public virtual void Die()
+        {
+            Destroy(gameObject);
+        }
     }
 }

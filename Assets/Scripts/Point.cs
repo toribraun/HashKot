@@ -3,24 +3,26 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Point : MonoBehaviour
+namespace Assets.Scripts
 {
-    [SerializeField]
-    private int cost = 1;
-    private SpriteRenderer sprite;
-    
-    public void Awake()
+    public class Point : MonoBehaviour
     {
-        sprite = GetComponentInChildren<SpriteRenderer>();
-    }
+        [SerializeField] private int cost = 1;
+        private SpriteRenderer sprite;
 
-    private void OnTriggerEnter2D(Collider2D collider)
-    {
-        var unit = collider.GetComponent<HashKot>();
-        if (unit)
+        public void Awake()
         {
-            unit.GetPoints(cost);
-            Destroy(gameObject);
+            sprite = GetComponentInChildren<SpriteRenderer>();
+        }
+
+        private void OnTriggerEnter2D(Collider2D collider)
+        {
+            var unit = collider.GetComponent<HashKot>();
+            if (unit)
+            {
+                unit.GetPoints(cost);
+                Destroy(gameObject);
+            }
         }
     }
 }
