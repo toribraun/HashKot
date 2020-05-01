@@ -23,6 +23,7 @@
     <explicitExcludes>
       <Path>.git</Path>
       <Path>.idea</Path>
+      <Path>HashKot v 0.0.1.app</Path>
       <Path>Library</Path>
       <Path>Logs</Path>
       <Path>Temp</Path>

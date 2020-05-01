@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class HashKot : Unit
@@ -68,15 +69,15 @@ public class HashKot : Unit
         pointsSumText.text = pointsSum.ToString();
     }
     
-    public void GetDamage(int damage)
+    public void GetDamage(Vector3 pythonPosition, int damage)
     {
         if (damage <= pointsSum)
         {
-            rigitbody.velocity = Vector3.zero;
-            rigitbody.AddForce(transform.right * 5, ForceMode2D.Impulse);
+            var axisDirection = pythonPosition.x < transform.position.x ? 1 : -1;
+            rigitbody.AddForce((transform.up + axisDirection * transform.right) * 40, ForceMode2D.Impulse);
             GetPoints(-damage);
         }
-        //else
-            //Destroy(gameObject);
+        else
+            SceneManager.LoadScene("MainMenu");
     }
 }

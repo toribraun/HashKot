@@ -60,6 +60,7 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\FollowCamera.cs" />
      <Compile Include="Assets\Scripts\HashKot.cs" />
+     <Compile Include="Assets\Scripts\MainMenu.cs" />
      <Compile Include="Assets\Scripts\Point.cs" />
      <Compile Include="Assets\Scripts\Python.cs" />
      <Compile Include="Assets\Scripts\Unit.cs" />
