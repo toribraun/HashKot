@@ -71,6 +71,6 @@ public class HashKot : Unit
 
     public override void Die()
     {
-        SceneManager.LoadScene("MainMenu");
+        SceneManager.LoadScene("MenuLose");
     }
 }
