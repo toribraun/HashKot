@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Python : Unit
@@ -14,22 +12,23 @@ public class Python : Unit
     private void Awake()
     {
         sprite = GetComponentInChildren<SpriteRenderer>();
-        direction = 2;
+        direction = 1;
     }
 
     private void Update()
     {
-        Move();
+        CheckDirection();
+        Move(direction, speed);
     }
 
-    private void Move()
+    private void CheckDirection()
     {
-        var colliderNear = Physics2D.OverlapPoint(transform.position + transform.up * 0.5F + transform.right * direction);
-        if (colliderNear && !colliderNear.GetComponent<Unit>() || Math.Abs(transform.position.x) > 100)
+        var colliderNear = Physics2D.OverlapPoint(transform.position + transform.up * 0.5F + transform.right * (4.5F * direction));
+
+        if (colliderNear && !colliderNear.GetComponent<Unit>())
         {
             direction *= -1;
         }
-        transform.position = Vector3.MoveTowards(transform.position, transform.position + transform.right * direction, speed * Time.deltaTime);
     }
 
     public void OnTriggerEnter2D(Collider2D collider)
@@ -41,7 +40,7 @@ public class Python : Unit
             if (Math.Abs(player.transform.position.y - transform.position.y) > 10)
             {
                 player.Jump();
-                Destroy(gameObject);
+                Die();
             }
             else
                 player.GetDamage(transform.position, 3);

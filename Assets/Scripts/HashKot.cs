@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -13,7 +10,6 @@ public class HashKot : Unit
     private float jumpforce = 75F;
     [SerializeField]
     private int pointsSum;
-
     [SerializeField] 
     public Text pointsSumText; 
 
@@ -38,18 +34,10 @@ public class HashKot : Unit
     private void Update()
     {
         if (Input.GetButton("Horizontal"))
-            Run();
+            Move(Input.GetAxis("Horizontal"), speed);
         if (Input.GetButtonDown("Jump") || Input.GetKeyDown(KeyCode.UpArrow))
             Jump();
         
-    }
-
-    private void Run()
-    {
-        transform.position = Vector3.MoveTowards(
-            transform.position, 
-            transform.position + transform.right * Input.GetAxis("Horizontal"), 
-            speed * Time.deltaTime);
     }
 
     public void Jump()
@@ -63,7 +51,7 @@ public class HashKot : Unit
         isGroundNear = colliders.Length > 1;
     }
     
-    public void GetPoints(int points)
+    public void UpdatePoints(int points)
     {
         pointsSum += points;
         pointsSumText.text = pointsSum.ToString();
@@ -75,9 +63,14 @@ public class HashKot : Unit
         {
             var axisDirection = pythonPosition.x < transform.position.x ? 1 : -1;
             rigitbody.AddForce((transform.up + axisDirection * transform.right) * 40, ForceMode2D.Impulse);
-            GetPoints(-damage);
+            UpdatePoints(-damage);
         }
         else
-            SceneManager.LoadScene("MainMenu");
+            Die();
+    }
+
+    public override void Die()
+    {
+        SceneManager.LoadScene("MainMenu");
     }
 }

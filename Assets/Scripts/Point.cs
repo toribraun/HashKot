@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Point : MonoBehaviour
 {
@@ -19,7 +16,7 @@ public class Point : MonoBehaviour
         var unit = collider.GetComponent<HashKot>();
         if (unit)
         {
-            unit.GetPoints(cost);
+            unit.UpdatePoints(cost);
             Destroy(gameObject);
         }
     }
