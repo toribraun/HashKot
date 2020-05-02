@@ -9,7 +9,7 @@ public class HashKot : Unit
     [SerializeField]
     private float jumpforce = 75F;
     [SerializeField]
-    private int pointsSum;
+    public int pointsSum;
     [SerializeField] 
     public Text pointsSumText; 
 

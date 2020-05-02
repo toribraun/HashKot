@@ -23,7 +23,7 @@ public class Python : Unit
 
     private void CheckDirection()
     {
-        var colliderNear = Physics2D.OverlapPoint(transform.position + transform.up * 0.5F + transform.right * (4.5F * direction));
+        var colliderNear = Physics2D.OverlapPoint(transform.position + transform.right * (4.5F * direction));
 
         if (colliderNear && !colliderNear.GetComponent<Unit>())
         {
@@ -43,7 +43,15 @@ public class Python : Unit
                 Die();
             }
             else
-                player.GetDamage(transform.position, 3);
+                player.GetDamage(transform.position, GetDamageLevelRandomly(collider));
         }
+    }
+
+    public int GetDamageLevelRandomly(Collider2D collider)
+    {
+        var player = collider.GetComponent<HashKot>();
+        var maxRange = 10;
+        var random = new System.Random();
+        return random.Next(1, Math.Min(maxRange, player.pointsSum / 2));
     }
 }
