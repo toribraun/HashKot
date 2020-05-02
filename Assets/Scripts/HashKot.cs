@@ -11,7 +11,7 @@ public class HashKot : Unit
     [SerializeField]
     public int pointsSum;
     [SerializeField] 
-    public Text pointsSumText; 
+    private Text pointsSumText; 
 
     private bool isGroundNear;
 
@@ -35,7 +35,7 @@ public class HashKot : Unit
     {
         if (Input.GetButton("Horizontal"))
             Move(Input.GetAxis("Horizontal"), speed);
-        if (Input.GetButtonDown("Jump") || Input.GetKeyDown(KeyCode.UpArrow))
+        if (isGroundNear && Input.GetButtonDown("Jump") || Input.GetKeyDown(KeyCode.UpArrow))
             Jump();
         
     }
@@ -47,8 +47,7 @@ public class HashKot : Unit
 
     private void CheckGround()
     {
-        Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, 0.3F);
-        isGroundNear = colliders.Length > 1;
+        isGroundNear = Physics2D.OverlapCircle(transform.position - transform.up * 17, 9);
     }
     
     public void UpdatePoints(int points)
