@@ -14,6 +14,7 @@ public class HashKot : Unit
     private Text pointsSumText; 
 
     private bool isGroundNear;
+    private bool doubleJumped = false;
 
     private Rigidbody2D rigitbody;
     private SpriteRenderer sprite;
@@ -29,25 +30,40 @@ public class HashKot : Unit
     private void FixedUpdate()
     {
         CheckGround();
+        if (isGroundNear)
+        {
+            doubleJumped = false;
+        }
     }
 
     private void Update()
     {
         if (Input.GetButton("Horizontal"))
             Move(Input.GetAxis("Horizontal"), speed);
-        if (isGroundNear && Input.GetButtonDown("Jump") || Input.GetKeyDown(KeyCode.UpArrow))
-            Jump();
-        
+        if (Input.GetButtonDown("Jump") || Input.GetKeyDown(KeyCode.UpArrow))
+        {
+            if (isGroundNear)
+            {
+                Jump();
+            }
+            else if (!doubleJumped)
+            {
+                doubleJumped = true;
+                Jump();
+            }
+        }
     }
 
     public void Jump()
     {
+        rigitbody.velocity = Vector3.zero;
         rigitbody.AddForce(transform.up * jumpforce, ForceMode2D.Impulse);
     }
 
     private void CheckGround()
     {
-        isGroundNear = Physics2D.OverlapCircle(transform.position - transform.up * 17, 9);
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, 0.3F);
+        isGroundNear = colliders.Length > 1;
     }
     
     public void UpdatePoints(int points)
