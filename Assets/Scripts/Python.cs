@@ -37,7 +37,7 @@ public class Python : Unit
 
         if (player)
         {
-            if (Math.Abs(player.transform.position.y - transform.position.y) > 10)
+            if (Math.Abs(player.transform.position.y - transform.position.y) > Math.Abs(player.transform.position.x - transform.position.x))
             {
                 player.Jump();
                 Die();
@@ -52,6 +52,6 @@ public class Python : Unit
         var player = collider.GetComponent<HashKot>();
         var maxRange = 10;
         var random = new System.Random();
-        return random.Next(1, Math.Min(maxRange, player.pointsSum / 2));
+        return random.Next(1, Math.Max(1, Math.Min(maxRange, player.pointsSum / 2)));
     }
 }
