@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -10,14 +11,15 @@ public class HashKot : Unit
     private float jumpforce = 75F;
     [SerializeField]
     public int pointsSum;
-    [SerializeField] 
-    private Text pointsSumText; 
+    [SerializeField]
+    private Text pointsSumText;
 
     private bool isGroundNear;
     private bool doubleJumped = false;
 
     private Rigidbody2D rigitbody;
     private SpriteRenderer sprite;
+    private Vector2 standingPoint;
 
     private void Awake()
     {
@@ -29,6 +31,7 @@ public class HashKot : Unit
 
     private void FixedUpdate()
     {
+        GetStandingPoint();
         CheckGround();
         if (isGroundNear)
         {
@@ -60,9 +63,15 @@ public class HashKot : Unit
         rigitbody.AddForce(transform.up * jumpforce, ForceMode2D.Impulse);
     }
 
+    private void GetStandingPoint()
+    {
+        standingPoint.x = transform.position.x;
+        standingPoint.y = transform.position.y - 7.35F;
+    }
+
     private void CheckGround()
     {
-        Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, 0.3F);
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(standingPoint, 0.2F);
         isGroundNear = colliders.Length > 1;
     }
     
@@ -77,6 +86,7 @@ public class HashKot : Unit
         if (damage <= pointsSum)
         {
             var axisDirection = pythonPosition.x < transform.position.x ? 1 : -1;
+            rigitbody.velocity = Vector3.zero;
             rigitbody.AddForce((transform.up + axisDirection * transform.right) * 40, ForceMode2D.Impulse);
             UpdatePoints(-damage);
         }
