@@ -12,7 +12,7 @@ public class Python : Unit
     private void Awake()
     {
         sprite = GetComponentInChildren<SpriteRenderer>();
-        direction = 1;
+        direction = -1;
     }
 
     private void Update()
@@ -23,7 +23,8 @@ public class Python : Unit
 
     private void CheckDirection()
     {
-        var colliderNear = Physics2D.OverlapPoint(transform.position + transform.right * (4.5F * direction));
+        var colliderNear = Physics2D.OverlapPoint(
+            transform.position + transform.right * (4.5F * direction));
 
         if (colliderNear && !colliderNear.GetComponent<Unit>())
         {
@@ -37,7 +38,7 @@ public class Python : Unit
 
         if (player)
         {
-            if (Math.Abs(player.transform.position.y - transform.position.y) > Math.Abs(player.transform.position.x - transform.position.x))
+            if (Math.Abs(player.transform.position.y - transform.position.y) > 10)
             {
                 player.Jump();
                 Die();
@@ -47,11 +48,11 @@ public class Python : Unit
         }
     }
 
-    public int GetDamageLevelRandomly(Collider2D collider)
+    private int GetDamageLevelRandomly(Collider2D collider)
     {
         var player = collider.GetComponent<HashKot>();
         var maxRange = 10;
         var random = new System.Random();
-        return random.Next(1, Math.Max(1, Math.Min(maxRange, player.pointsSum / 2)));
+        return random.Next(1, Math.Min(maxRange, player.pointsSum / 2 + 1));
     }
 }
