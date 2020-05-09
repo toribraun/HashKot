@@ -16,15 +16,22 @@ public class HashKot : Unit
 
     private bool isGroundNear;
     private bool doubleJumped = false;
+    private bool turnedRight = true;
 
     private Rigidbody2D rigitbody;
-    private SpriteRenderer sprite;
+    private Animator animator;
     private Vector2 standingPoint;
+    
+    private HashKotState State
+    {
+        get { return (HashKotState)animator.GetInteger("State"); }
+        set { animator.SetInteger("State", (int)value); }
+    }
 
     private void Awake()
     {
         rigitbody = GetComponent<Rigidbody2D>();
-        sprite = GetComponentInChildren<SpriteRenderer>();
+        animator = GetComponent<Animator>();
         pointsSum = 0;
         pointsSumText.text = "0";
     }
@@ -41,8 +48,9 @@ public class HashKot : Unit
 
     private void Update()
     {
+        Idle();
         if (Input.GetButton("Horizontal"))
-            Move(Input.GetAxis("Horizontal"), speed);
+            Run();
         if (Input.GetButtonDown("Jump") || Input.GetKeyDown(KeyCode.UpArrow))
         {
             if (isGroundNear)
@@ -57,6 +65,20 @@ public class HashKot : Unit
         }
     }
 
+    public void Idle()
+    {
+        if (turnedRight)
+            State = HashKotState.IdleRight;
+        else State = HashKotState.IdleLeft;
+    }
+
+    public void Run()
+    {
+        if (Input.GetAxis("Horizontal") >= 0)
+            turnedRight = true;
+        else turnedRight = false;
+        Move(Input.GetAxis("Horizontal"), speed);
+    }
     public void Jump()
     {
         rigitbody.velocity = Vector3.zero;

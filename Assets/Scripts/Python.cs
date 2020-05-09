@@ -38,7 +38,7 @@ public class Python : Unit
 
         if (player)
         {
-            if (Math.Abs(player.transform.position.y - transform.position.y) > 10)
+            if (Math.Abs(player.transform.position.y - transform.position.y) > Math.Abs(player.transform.position.x - transform.position.x))
             {
                 player.Jump();
                 Die();

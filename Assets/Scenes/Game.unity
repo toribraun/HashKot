@@ -121,6 +121,31 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &93012662 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8278557701498776816, guid: 3375fcdacfe22483c878a26e45269617,
+    type: 3}
+  m_PrefabInstance: {fileID: 8278557701201667657}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &93012663
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 93012662}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d057a880f391b174cb1014995eb962ca, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &198529495
 GameObject:
   m_ObjectHideFlags: 0
@@ -2943,6 +2968,27 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8278557701903452208, guid: 3375fcdacfe22483c878a26e45269617,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 014453ea1367d2b4f9f90838a8a2487d,
+        type: 3}
+    - target: {fileID: 8278557701903452208, guid: 3375fcdacfe22483c878a26e45269617,
+        type: 3}
+      propertyPath: m_FlipX
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8278557701903452208, guid: 3375fcdacfe22483c878a26e45269617,
+        type: 3}
+      propertyPath: m_FlipY
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8278557701903452209, guid: 3375fcdacfe22483c878a26e45269617,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3375fcdacfe22483c878a26e45269617, type: 3}
