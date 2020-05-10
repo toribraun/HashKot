@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class HashKot : Unit
 {
     [SerializeField]
-    private float speed = 15F;
+    private float speed = 40F;
     [SerializeField]
     private float jumpforce = 75F;
     [SerializeField]
@@ -44,11 +44,13 @@ public class HashKot : Unit
         {
             doubleJumped = false;
         }
+        else SetJumpState();
     }
 
     private void Update()
     {
-        Idle();
+        if (isGroundNear)
+            Idle();
         if (Input.GetButton("Horizontal"))
             Run();
         if (Input.GetButtonDown("Jump") || Input.GetKeyDown(KeyCode.UpArrow))
@@ -75,10 +77,27 @@ public class HashKot : Unit
     public void Run()
     {
         if (Input.GetAxis("Horizontal") >= 0)
+        {
             turnedRight = true;
-        else turnedRight = false;
+            State = HashKotState.RunRight;
+        }
+        else
+        {
+            turnedRight = false;
+            State = HashKotState.RunLeft;
+        }
+        if (!isGroundNear)
+            SetJumpState();
         Move(Input.GetAxis("Horizontal"), speed);
     }
+
+    public void SetJumpState()
+    {
+        if (turnedRight)
+            State = HashKotState.JumpRight;
+        else State = HashKotState.JumpLeft;
+    }
+
     public void Jump()
     {
         rigitbody.velocity = Vector3.zero;
@@ -93,7 +112,7 @@ public class HashKot : Unit
 
     private void CheckGround()
     {
-        Collider2D[] colliders = Physics2D.OverlapCircleAll(standingPoint, 0.2F);
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(standingPoint, 0.5F);
         isGroundNear = colliders.Length > 1;
     }
     

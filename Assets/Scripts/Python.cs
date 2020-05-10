@@ -29,6 +29,7 @@ public class Python : Unit
         if (colliderNear && !colliderNear.GetComponent<Unit>())
         {
             direction *= -1;
+            sprite.flipX = direction > 0.0;
         }
     }
 

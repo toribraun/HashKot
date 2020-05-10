@@ -2702,6 +2702,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4897519265191105361, guid: 600ee712bb8824bfcb46231453b46352,
+        type: 3}
+      propertyPath: m_FlipX
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 600ee712bb8824bfcb46231453b46352, type: 3}
 --- !u!1001 &4973594938297710630
@@ -2912,7 +2917,12 @@ PrefabInstance:
     - target: {fileID: 8278557701498776819, guid: 3375fcdacfe22483c878a26e45269617,
         type: 3}
       propertyPath: speed
-      value: 25
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 8278557701498776819, guid: 3375fcdacfe22483c878a26e45269617,
+        type: 3}
+      propertyPath: a
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8278557701498776820, guid: 3375fcdacfe22483c878a26e45269617,
         type: 3}
@@ -2973,7 +2983,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 014453ea1367d2b4f9f90838a8a2487d,
+      objectReference: {fileID: 21300000, guid: 4cec7195e503b2a4da0bb5aa1fa5be14,
         type: 3}
     - target: {fileID: 8278557701903452208, guid: 3375fcdacfe22483c878a26e45269617,
         type: 3}
@@ -2984,6 +2994,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_FlipY
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8278557701903452208, guid: 3375fcdacfe22483c878a26e45269617,
+        type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8278557701903452209, guid: 3375fcdacfe22483c878a26e45269617,
         type: 3}
