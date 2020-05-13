@@ -58,7 +58,7 @@ public class HashKot : Unit
             Run();
         if (Input.GetButtonDown("Jump") || Input.GetKeyDown(KeyCode.UpArrow))
         {
-            Jump();
+            CheckAndJump();
         }
     }
 
@@ -107,25 +107,25 @@ public class HashKot : Unit
                 State = HashKotState.FallLeft;
         }
     }
-
     public void Jump()
+    {
+        if (turnedRight)
+            State = HashKotState.JumpRight;
+        else State = HashKotState.JumpLeft;
+        rigitbody.velocity = Vector3.zero;
+        rigitbody.AddForce(transform.up * jumpforce, ForceMode2D.Impulse);
+    }
+
+    private void CheckAndJump()
     {
         if (isGroundNear)
         {
-            if (turnedRight)
-                State = HashKotState.JumpRight;
-            else State = HashKotState.JumpLeft;
-            rigitbody.velocity = Vector3.zero;
-            rigitbody.AddForce(transform.up * jumpforce, ForceMode2D.Impulse);
+            Jump();
         }
         else if (!doubleJumped)
         {
-            if (turnedRight)
-                State = HashKotState.JumpRight;
-            else State = HashKotState.JumpLeft;
             doubleJumped = true;
-            rigitbody.velocity = Vector3.zero;
-            rigitbody.AddForce(transform.up * jumpforce, ForceMode2D.Impulse);
+            Jump();
         }
     }
 
