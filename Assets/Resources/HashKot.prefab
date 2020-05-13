@@ -96,7 +96,7 @@ MonoBehaviour:
   speed: 25
   jumpforce: 75
   pointsSum: 0
-  pointsSumText: {fileID: 4973594937498000805, guid: 96621f4a29fcf4db886b4dcef4ae8ecb,
+  pointsSumText: {fileID: 5906168830109678303, guid: 96621f4a29fcf4db886b4dcef4ae8ecb,
     type: 3}
 --- !u!1 &8278557701903452222
 GameObject:
@@ -176,6 +176,6 @@ SpriteRenderer:
   m_Size: {x: 4.8, y: 7.19}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0

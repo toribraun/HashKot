@@ -1,5 +1,6 @@
 ﻿using System;
 using UnityEngine;
+using Random = System.Random;
 
 public class Python : Unit
 {
@@ -8,6 +9,7 @@ public class Python : Unit
 
     private SpriteRenderer sprite;
     private int direction;
+    private Random random = new Random();
     
     private void Awake()
     {
@@ -45,15 +47,13 @@ public class Python : Unit
                 Die();
             }
             else
-                player.GetDamage(transform.position, GetDamageLevelRandomly(collider));
+                player.GetDamage(transform.position, GetDamageLevelRandomly());
         }
     }
 
-    private int GetDamageLevelRandomly(Collider2D collider)
+    private int GetDamageLevelRandomly()
     {
-        var player = collider.GetComponent<HashKot>();
         var maxRange = 10;
-        var random = new System.Random();
-        return random.Next(1, Math.Min(maxRange, player.pointsSum / 2 + 1));
+        return random.Next(1, maxRange);
     }
 }

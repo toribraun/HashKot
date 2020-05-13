@@ -20,8 +20,10 @@ public class HashKot : Unit
 
     private Rigidbody2D rigitbody;
     private Animator animator;
+    private Collider2D collider;
     private Vector2 standingPoint;
-    
+    private Vector2 boxSize = new Vector2 { x = 7.39F, y = 0.1F };
+
     private HashKotState State
     {
         get { return (HashKotState)animator.GetInteger("State"); }
@@ -32,6 +34,7 @@ public class HashKot : Unit
     {
         rigitbody = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        collider = GetComponent<Collider2D>();
         pointsSum = 0;
         pointsSumText.text = "0";
     }
@@ -44,7 +47,7 @@ public class HashKot : Unit
         {
             doubleJumped = false;
         }
-        else SetJumpState();
+        else SetFallState();
     }
 
     private void Update()
@@ -55,15 +58,7 @@ public class HashKot : Unit
             Run();
         if (Input.GetButtonDown("Jump") || Input.GetKeyDown(KeyCode.UpArrow))
         {
-            if (isGroundNear)
-            {
-                Jump();
-            }
-            else if (!doubleJumped)
-            {
-                doubleJumped = true;
-                Jump();
-            }
+            Jump();
         }
     }
 
@@ -87,32 +82,62 @@ public class HashKot : Unit
             State = HashKotState.RunLeft;
         }
         if (!isGroundNear)
-            SetJumpState();
+            SetFallState();
         Move(Input.GetAxis("Horizontal"), speed);
     }
 
-    public void SetJumpState()
+    public void SetFallState()
     {
         if (turnedRight)
-            State = HashKotState.JumpRight;
-        else State = HashKotState.JumpLeft;
+        {
+            if (rigitbody.velocity.y >= jumpforce / 2)
+                State = HashKotState.JumpRight;
+            else if (rigitbody.velocity.y < -0.5)
+                State = HashKotState.FallRight;
+            else if (Math.Abs((int)State) < 3)
+                State = HashKotState.FallRight;
+        }
+        else
+        {
+            if (rigitbody.velocity.y >= jumpforce / 2)
+                State = HashKotState.JumpLeft;
+            else if (rigitbody.velocity.y < -0.5)
+                State = HashKotState.FallLeft;
+            else if (Math.Abs((int)State) < 3)
+                State = HashKotState.FallLeft;
+        }
     }
 
     public void Jump()
     {
-        rigitbody.velocity = Vector3.zero;
-        rigitbody.AddForce(transform.up * jumpforce, ForceMode2D.Impulse);
+        if (isGroundNear)
+        {
+            if (turnedRight)
+                State = HashKotState.JumpRight;
+            else State = HashKotState.JumpLeft;
+            rigitbody.velocity = Vector3.zero;
+            rigitbody.AddForce(transform.up * jumpforce, ForceMode2D.Impulse);
+        }
+        else if (!doubleJumped)
+        {
+            if (turnedRight)
+                State = HashKotState.JumpRight;
+            else State = HashKotState.JumpLeft;
+            doubleJumped = true;
+            rigitbody.velocity = Vector3.zero;
+            rigitbody.AddForce(transform.up * jumpforce, ForceMode2D.Impulse);
+        }
     }
 
     private void GetStandingPoint()
     {
-        standingPoint.x = transform.position.x;
+        standingPoint.x = collider.bounds.center.x;
         standingPoint.y = transform.position.y - 7.35F;
     }
 
     private void CheckGround()
     {
-        Collider2D[] colliders = Physics2D.OverlapCircleAll(standingPoint, 0.5F);
+        Collider2D[] colliders = Physics2D.OverlapBoxAll(standingPoint, boxSize, 0);
         isGroundNear = colliders.Length > 1;
     }
     
@@ -138,5 +163,16 @@ public class HashKot : Unit
     public override void Die()
     {
         SceneManager.LoadScene("MenuLose");
+    }
+    
+    public void EndGame()
+    {
+        if (pointsSum >= 40)
+        {
+            GameStates.CurrentPointSum = pointsSum;
+            SceneManager.LoadScene("MenuWin");
+        }
+        else
+            SceneManager.LoadScene("MenuLose");
     }
 }
