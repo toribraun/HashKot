@@ -3,7 +3,7 @@
 public class FollowCamera : MonoBehaviour
 {
     [SerializeField] 
-    private float speed = 4F;
+    private float speed = 7F;
     [SerializeField] 
     private Transform player;
 
@@ -21,7 +21,7 @@ public class FollowCamera : MonoBehaviour
         
         if (player.position.y < 5)
             position.y = 0;
-        position.y *= 0.5F;
+        position.y *= 0.9F;
             
         transform.position = Vector3.Lerp(transform.position, position, speed * Time.deltaTime);
     }
