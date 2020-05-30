@@ -11,7 +11,14 @@ public class MainMenu : MonoBehaviour
     public void StartGame(string levelScene)
     {
         Time.timeScale = 1F;
+        GameStates.CurrentLevel = levelScene;
         SceneManager.LoadScene(levelScene);
+    }
+    
+    public void RestartGame()
+    {
+        Time.timeScale = 1F;
+        SceneManager.LoadScene(GameStates.CurrentLevel);
     }
     
     public void LoadLevelsMenu()
