@@ -8,10 +8,15 @@ public class MainMenu : MonoBehaviour
     [SerializeField] 
     public GameObject PauseMenu;
     
-    public void StartGame()
+    public void StartGame(string levelScene)
     {
         Time.timeScale = 1F;
-        SceneManager.LoadScene("Game");
+        SceneManager.LoadScene(levelScene);
+    }
+    
+    public void LoadLevelsMenu()
+    {
+        SceneManager.LoadScene("LevelsMenu");
     }
     
     public void LoadMainMenu()

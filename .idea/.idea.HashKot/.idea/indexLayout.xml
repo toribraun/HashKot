@@ -28,6 +28,7 @@
     <explicitExcludes>
       <Path>.git</Path>
       <Path>.idea</Path>
+      <Path>.vs</Path>
       <Path>HashKotGame</Path>
       <Path>Library</Path>
       <Path>Logs</Path>

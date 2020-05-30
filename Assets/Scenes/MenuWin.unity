@@ -216,6 +216,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3966e68e139f45c693d37d48b296790, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  RulesMenu: {fileID: 0}
+  PauseMenu: {fileID: 0}
 --- !u!4 &146650919
 Transform:
   m_ObjectHideFlags: 0
