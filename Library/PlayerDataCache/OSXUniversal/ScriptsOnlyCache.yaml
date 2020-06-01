@@ -22,10 +22,8 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - TestRunner.Callbacks.WindowResultUpdaterDataHolder
@@ -309,17 +307,7 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 20
       Script: {instanceID: 0}
-    - Class: 21
-      Script: {instanceID: 0}
     - Class: 28
-      Script: {instanceID: 0}
-    - Class: 48
-      Script: {instanceID: 0}
-    - Class: 50
-      Script: {instanceID: 0}
-    - Class: 58
-      Script: {instanceID: 0}
-    - Class: 61
       Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
@@ -328,13 +316,9 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11170}
     - Class: 114
-      Script: {instanceID: 11458}
-    - Class: 114
       Script: {instanceID: 11512}
     - Class: 114
       Script: {instanceID: 12172}
-    - Class: 114
-      Script: {instanceID: 12458}
     - Class: 114
       Script: {instanceID: 12818}
     - Class: 114
@@ -342,22 +326,12 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 13638}
     - Class: 114
-      Script: {instanceID: 13942}
-    - Class: 114
-      Script: {instanceID: 14122}
-    - Class: 114
       Script: {instanceID: 14254}
-    - Class: 114
-      Script: {instanceID: 14326}
     - Class: 115
-      Script: {instanceID: 0}
-    - Class: 128
       Script: {instanceID: 0}
     - Class: 157
       Script: {instanceID: 0}
     - Class: 196
-      Script: {instanceID: 0}
-    - Class: 212
       Script: {instanceID: 0}
     - Class: 213
       Script: {instanceID: 0}
@@ -450,6 +424,71 @@ ScriptsOnlyBuild:
     - Class: 157
       Script: {instanceID: 0}
     - Class: 196
+      Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
+      Script: {instanceID: 0}
+    Assets/Scenes/Setting.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 50
+      Script: {instanceID: 0}
+    - Class: 58
+      Script: {instanceID: 0}
+    - Class: 61
+      Script: {instanceID: 0}
+    - Class: 81
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 11170}
+    - Class: 114
+      Script: {instanceID: 11458}
+    - Class: 114
+      Script: {instanceID: 11512}
+    - Class: 114
+      Script: {instanceID: 12172}
+    - Class: 114
+      Script: {instanceID: 12458}
+    - Class: 114
+      Script: {instanceID: 12818}
+    - Class: 114
+      Script: {instanceID: 12878}
+    - Class: 114
+      Script: {instanceID: 13638}
+    - Class: 114
+      Script: {instanceID: 13942}
+    - Class: 114
+      Script: {instanceID: 14122}
+    - Class: 114
+      Script: {instanceID: 14254}
+    - Class: 114
+      Script: {instanceID: 14326}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 128
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 196
+      Script: {instanceID: 0}
+    - Class: 212
       Script: {instanceID: 0}
     - Class: 213
       Script: {instanceID: 0}
@@ -732,7 +771,7 @@ ScriptsOnlyBuild:
     className: RemoteTestResultSender
   - hash:
       serializedVersion: 2
-      Hash: 86889623a1694ef4bd16d5b6ba06e5d3
+      Hash: 7a78fd73cdd032024fabda2cf2e9e52f
     assemblyName: NewAssembly.dll
     namespaceName: 
     className: MainMenu
@@ -990,6 +1029,7 @@ ScriptsOnlyBuild:
     className: PlayableTrack
   platform: 2
   scenePathNames:
+  - Assets/Scenes/Setting.unity
   - Assets/Scenes/MainMenu.unity
   - Assets/Scenes/Game.unity
   - Assets/Scenes/MenuLose.unity
@@ -997,4 +1037,4 @@ ScriptsOnlyBuild:
   - Assets/Scenes/LevelsMenu.unity
   - Assets/Scenes/Level2.unity
   - Assets/Scenes/Level3.unity
-  playerPath: "/Users/victoriabraun/Desktop/\_HashKotGame.app"
+  playerPath: "/Users/victoriabraun/Desktop/\_HashKotGame1.app"

@@ -6,6 +6,8 @@ public class MainMenu : MonoBehaviour
     [SerializeField] 
     public GameObject RulesMenu;
     [SerializeField] 
+    public GameObject RulesMenuBeforeGame;
+    [SerializeField] 
     public GameObject PauseMenu;
     
     public void StartGame(string levelScene)
@@ -23,7 +25,13 @@ public class MainMenu : MonoBehaviour
     
     public void LoadLevelsMenu()
     {
-        SceneManager.LoadScene("LevelsMenu");
+        if (GameStates.IsFirstPlay)
+        {
+            GameStates.IsFirstPlay = false;
+            RulesMenuBeforeGame.SetActive(true);
+        }
+        else
+            SceneManager.LoadScene("LevelsMenu");
     }
     
     public void LoadMainMenu()
