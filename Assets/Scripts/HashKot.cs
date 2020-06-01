@@ -13,6 +13,7 @@ public class HashKot : Unit
     public int pointsSum;
     [SerializeField]
     private Text pointsSumText;
+    private int totalCollectedPoint = 0;
 
     private bool isGroundNear;
     private bool doubleJumped = false;
@@ -140,13 +141,19 @@ public class HashKot : Unit
         Collider2D[] colliders = Physics2D.OverlapBoxAll(standingPoint, boxSize, 0);
         isGroundNear = colliders.Length > 1;
     }
-    
+
     public void UpdatePoints(int points)
     {
         pointsSum += points;
         pointsSumText.text = pointsSum.ToString();
+        if (points > 0)
+        {
+            totalCollectedPoint += points;
+            if (totalCollectedPoint > 99)
+                EndGame();
+        }
     }
-    
+
     public void GetDamage(Vector3 pythonPosition, int damage)
     {
         if (damage <= pointsSum)
@@ -164,7 +171,7 @@ public class HashKot : Unit
     {
         SceneManager.LoadScene("MenuLose");
     }
-    
+
     public void EndGame()
     {
         if (pointsSum >= 40)
