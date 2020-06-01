@@ -44,10 +44,14 @@ public class Python : Unit
             if (Math.Abs(player.transform.position.y - transform.position.y) > Math.Abs(player.transform.position.x - transform.position.x))
             {
                 player.Jump();
+                player.GetComponent<AudioSource>().Play();
                 Die();
             }
             else
+            {
                 player.GetDamage(transform.position, GetDamageLevelRandomly());
+                GetComponent<AudioSource>().Play();
+            }
         }
     }
 

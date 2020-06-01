@@ -148,6 +148,7 @@ public class HashKot : Unit
         pointsSumText.text = pointsSum.ToString();
         if (points > 0)
         {
+            GetComponentInChildren<SpriteRenderer>().GetComponent<AudioSource>().Play();
             totalCollectedPoint += points;
             if (totalCollectedPoint > 99)
                 EndGame();
