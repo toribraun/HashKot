@@ -288,6 +288,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RulesMenu: {fileID: 803331784}
+  RulesMenuBeforeGame: {fileID: 0}
   PauseMenu: {fileID: 958014436}
 --- !u!1 &141517088
 GameObject:
@@ -2332,7 +2333,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 443774070}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -172.1, y: 9.2, z: 0}
+  m_LocalPosition: {x: -172.1, y: 9, z: 0}
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children:
   - {fileID: 492410338}
