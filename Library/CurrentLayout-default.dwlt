@@ -21,7 +21,7 @@ MonoBehaviour:
   m_ShowMode: 4
   m_Title: 
   m_RootView: {fileID: 2}
-  m_MinSize: {x: 875, y: 542}
+  m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
   m_Maximized: 1
 --- !u!114 &2
@@ -112,10 +112,10 @@ MonoBehaviour:
     y: 30
     width: 1536
     height: 731
-  m_MinSize: {x: 678, y: 492}
-  m_MaxSize: {x: 14002, y: 14042}
+  m_MinSize: {x: 678, y: 342}
+  m_MaxSize: {x: 12003, y: 8042}
   vertical: 0
-  controlID: 105
+  controlID: 85
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -137,10 +137,10 @@ MonoBehaviour:
     y: 0
     width: 1257
     height: 731
-  m_MinSize: {x: 402, y: 492}
-  m_MaxSize: {x: 10001, y: 14042}
+  m_MinSize: {x: 403, y: 342}
+  m_MaxSize: {x: 8003, y: 8042}
   vertical: 1
-  controlID: 106
+  controlID: 91
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -162,10 +162,10 @@ MonoBehaviour:
     y: 0
     width: 1257
     height: 460
-  m_MinSize: {x: 402, y: 221}
-  m_MaxSize: {x: 8002, y: 4021}
+  m_MinSize: {x: 403, y: 221}
+  m_MaxSize: {x: 8003, y: 4021}
   vertical: 0
-  controlID: 107
+  controlID: 132
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -183,10 +183,10 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 348
+    width: 275
     height: 460
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 201, y: 221}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 13}
   m_Panes:
   - {fileID: 13}
@@ -208,9 +208,9 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
-    x: 348
+    x: 275
     y: 0
-    width: 909
+    width: 982
     height: 460
   m_MinSize: {x: 202, y: 221}
   m_MaxSize: {x: 4002, y: 4021}
@@ -232,7 +232,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 1
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: ProjectBrowser
+  m_Name: ConsoleWindow
   m_EditorClassIdentifier: 
   m_Children: []
   m_Position:
@@ -241,15 +241,15 @@ MonoBehaviour:
     y: 460
     width: 1257
     height: 271
-  m_MinSize: {x: 231, y: 271}
-  m_MaxSize: {x: 10001, y: 10021}
-  m_ActualView: {fileID: 18}
+  m_MinSize: {x: 101, y: 121}
+  m_MaxSize: {x: 4001, y: 4021}
+  m_ActualView: {fileID: 19}
   m_Panes:
   - {fileID: 18}
   - {fileID: 19}
   - {fileID: 20}
-  m_Selected: 0
-  m_LastSelected: 1
+  m_Selected: 1
+  m_LastSelected: 0
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -269,8 +269,8 @@ MonoBehaviour:
     y: 0
     width: 279
     height: 731
-  m_MinSize: {x: 276, y: 71}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 21}
   m_Panes:
   - {fileID: 21}
@@ -298,9 +298,9 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 348
+    x: 275.2
     y: 73.6
-    width: 907
+    width: 980
     height: 439
   m_ViewDataDictionary: {fileID: 0}
   m_SerializedViewNames: []
@@ -311,7 +311,7 @@ MonoBehaviour:
   m_ShowGizmos: 0
   m_TargetDisplay: 0
   m_ClearColor: {r: 0, g: 0, b: 0, a: 0}
-  m_TargetSize: {x: 1133.75, y: 522.5}
+  m_TargetSize: {x: 1225, y: 522.5}
   m_TextureFilterMode: 0
   m_TextureHideFlags: 61
   m_RenderIMGUI: 1
@@ -325,8 +325,8 @@ MonoBehaviour:
     m_VRangeLocked: 0
     hZoomLockedByDefault: 0
     vZoomLockedByDefault: 0
-    m_HBaseRangeMin: -453.5
-    m_HBaseRangeMax: 453.5
+    m_HBaseRangeMin: -490
+    m_HBaseRangeMax: 490
     m_VBaseRangeMin: -209
     m_VBaseRangeMax: 209
     m_HAllowExceedBaseRangeMin: 1
@@ -346,23 +346,23 @@ MonoBehaviour:
       serializedVersion: 2
       x: 0
       y: 21
-      width: 907
+      width: 980
       height: 418
     m_Scale: {x: 1, y: 1}
-    m_Translation: {x: 453.5, y: 209}
+    m_Translation: {x: 490, y: 209}
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
-      x: -453.5
+      x: -490
       y: -209
-      width: 907
+      width: 980
       height: 418
     m_MinimalGUI: 1
   m_defaultScale: 1
-  m_LastWindowPixelSize: {x: 1133.75, y: 548.75}
+  m_LastWindowPixelSize: {x: 1225, y: 548.75}
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
   m_LowResolutionForAspectRatios: 00000000000000000000
@@ -391,15 +391,15 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 73.6
-    width: 347
+    width: 274
     height: 439
   m_ViewDataDictionary: {fileID: 0}
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 48f9ffff
-      m_LastClickedID: -1720
-      m_ExpandedIDs: f4f9ffff6afbffff203a0000
+      m_SelectedIDs: 
+      m_LastClickedID: 0
+      m_ExpandedIDs: d6bdffffeabdffff94beffff6abfffff6ebfffff74bfffff78bfffff26c0ffff2ac0ffff2ec0ffffeacbfffff8ccffff5eceffff68cfffffc8d6ffff02ddffffdcddffffb0deffff00e0fffffae0ffff1ce2ffff6afbffffd0380000043b0000fed9000078e500003ee9000024020100282c0100664801007a4e0100
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -444,21 +444,21 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 73
-    width: 900
-    height: 523
+    y: 73.6
+    width: 274
+    height: 439
   m_ViewDataDictionary: {fileID: 0}
   m_Spl:
-    ID: 805
+    ID: 3585
     splitterInitialOffset: 0
     currentActiveSplitter: -1
-    realSizes: 5401000071000000
+    realSizes: 150100005c000000
     relativeSizes:
     - 0.75
     - 0.25
     minSizes: 2000000020000000
     maxSizes: 0000000000000000
-    lastTotalSize: 453
+    lastTotalSize: 369
     splitSize: 6
     xOffset: 0
   m_TestTypeToolbarIndex: 0
@@ -481,13 +481,13 @@ MonoBehaviour:
       categories: []
       parentId: 
       parentUniqueId: 
-    - id: 1010
-      uniqueId: '[C:/Users/Anzhelika/Desktop/HashKot/HashKot/Library/ScriptAssemblies/Tests.dll][suite]'
+    - id: 1005
+      uniqueId: '[C:/things/HashKot/Library/ScriptAssemblies/Tests.dll][suite]'
       name: Tests.dll
-      fullName: C:/Users/Anzhelika/Desktop/HashKot/HashKot/Library/ScriptAssemblies/Tests.dll
-      resultStatus: 2
-      duration: 0.4000414
-      messages: One or more child tests had errors
+      fullName: C:/things/HashKot/Library/ScriptAssemblies/Tests.dll
+      resultStatus: 0
+      duration: 0
+      messages: 
       output: 
       stacktrace: 
       notRunnable: 0
@@ -495,7 +495,7 @@ MonoBehaviour:
       description: 
       isSuite: 1
       categories: []
-      parentId: 1003
+      parentId: 1000
       parentUniqueId: '[HashKot][suite]'
     - id: 1011
       uniqueId: Tests.dll/[Tests][suite]
@@ -529,150 +529,6 @@ MonoBehaviour:
       categories: []
       parentId: 1011
       parentUniqueId: Tests.dll/[Tests][suite]
-    - id: 1008
-      uniqueId: Tests.dll/Tests/HashKotTests/[Tests][Tests.HashKotTests.TestDoubleJump]
-      name: TestDoubleJump
-      fullName: Tests.HashKotTests.TestDoubleJump
-      resultStatus: 2
-      duration: 0.1586791
-      messages: 'Unhandled log message: ''[Exception] MissingComponentException:
-        There is no ''Animator'' attached to the "HashKot(Clone)" game object, but
-        a script is trying to access it.
-
-        You probably need to add a Animator
-        to the game object "HashKot(Clone)". Or your script needs to check if the
-        component is attached before using it.''. Use UnityEngine.TestTools.LogAssert.Expect'
-      output: 'MissingComponentException: There is no ''Animator'' attached to the
-        "HashKot(Clone)" game object, but a script is trying to access it.
-
-        You
-        probably need to add a Animator to the game object "HashKot(Clone)". Or your
-        script needs to check if the component is attached before using it.
-
-        MissingComponentException:
-        There is no ''Animator'' attached to the "HashKot(Clone)" game object, but
-        a script is trying to access it.
-
-        You probably need to add a Animator
-        to the game object "HashKot(Clone)". Or your script needs to check if the
-        component is attached before using it.
-
-        MissingComponentException:
-        There is no ''Animator'' attached to the "HashKot(Clone)" game object, but
-        a script is trying to access it.
-
-        You probably need to add a Animator
-        to the game object "HashKot(Clone)". Or your script needs to check if the
-        component is attached before using it.
-
-        MissingComponentException:
-        There is no ''Animator'' attached to the "HashKot(Clone)" game object, but
-        a script is trying to access it.
-
-        You probably need to add a Animator
-        to the game object "HashKot(Clone)". Or your script needs to check if the
-        component is attached before using it.
-
-        MissingComponentException:
-        There is no ''Animator'' attached to the "HashKot(Clone)" game object, but
-        a script is trying to access it.
-
-        You probably need to add a Animator
-        to the game object "HashKot(Clone)". Or your script needs to check if the
-        component is attached before using it.
-
-        MissingComponentException:
-        There is no ''Animator'' attached to the "HashKot(Clone)" game object, but
-        a script is trying to access it.
-
-        You probably need to add a Animator
-        to the game object "HashKot(Clone)". Or your script needs to check if the
-        component is attached before using it.
-
-'
-      stacktrace: 'UnityEngine.Animator.SetInteger (System.String name, System.Int32
-        value) (at <049be2afe36f487eb06ef49d51a0bab6>:0)
-
-        HashKot.set_State
-        (HashKotState value) (at Assets/Scripts/HashKot.cs:27)
-
-        HashKot.SetJumpState
-        () (at Assets/Scripts/HashKot.cs:88)
-
-        HashKot.FixedUpdate () (at
-        Assets/Scripts/HashKot.cs:46)
-
-
-
-'
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-      isSuite: 0
-      categories:
-      - Uncategorized
-      parentId: 1004
-      parentUniqueId: Tests.dll/Tests/[Tests][Tests.HashKotTests][suite]
-    - id: 1009
-      uniqueId: Tests.dll/Tests/HashKotTests/[Tests][Tests.HashKotTests.TestGameIsOverWhenPointSumIsBelowZero]
-      name: TestGameIsOverWhenPointSumIsBelowZero
-      fullName: Tests.HashKotTests.TestGameIsOverWhenPointSumIsBelowZero
-      resultStatus: 2
-      duration: 0.0204399
-      messages: 'Unhandled log message: ''[Exception] MissingComponentException:
-        There is no ''Animator'' attached to the "HashKot(Clone)" game object, but
-        a script is trying to access it.
-
-        You probably need to add a Animator
-        to the game object "HashKot(Clone)". Or your script needs to check if the
-        component is attached before using it.''. Use UnityEngine.TestTools.LogAssert.Expect'
-      output: 'MissingComponentException: There is no ''Animator'' attached to the
-        "HashKot(Clone)" game object, but a script is trying to access it.
-
-        You
-        probably need to add a Animator to the game object "HashKot(Clone)". Or your
-        script needs to check if the component is attached before using it.
-
-        MissingComponentException:
-        There is no ''Animator'' attached to the "HashKot(Clone)" game object, but
-        a script is trying to access it.
-
-        You probably need to add a Animator
-        to the game object "HashKot(Clone)". Or your script needs to check if the
-        component is attached before using it.
-
-        MissingComponentException:
-        There is no ''Animator'' attached to the "HashKot(Clone)" game object, but
-        a script is trying to access it.
-
-        You probably need to add a Animator
-        to the game object "HashKot(Clone)". Or your script needs to check if the
-        component is attached before using it.
-
-'
-      stacktrace: 'UnityEngine.Animator.SetInteger (System.String name, System.Int32
-        value) (at <049be2afe36f487eb06ef49d51a0bab6>:0)
-
-        HashKot.set_State
-        (HashKotState value) (at Assets/Scripts/HashKot.cs:27)
-
-        HashKot.SetJumpState
-        () (at Assets/Scripts/HashKot.cs:88)
-
-        HashKot.FixedUpdate () (at
-        Assets/Scripts/HashKot.cs:46)
-
-
-
-'
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-      isSuite: 0
-      categories:
-      - Uncategorized
-      parentId: 1004
-      parentUniqueId: Tests.dll/Tests/[Tests][Tests.HashKotTests][suite]
     - id: 1007
       uniqueId: Tests.dll/Tests/HashKotTests/[Tests][Tests.HashKotTests.TestGetDamageFromPython]
       name: TestGetDamageFromPython
@@ -866,7 +722,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 7e00d0c3
       m_LastClickedID: -1009778562
-      m_ExpandedIDs: d88062e48359db4163f6e14d7fe66b7effffff7f
+      m_ExpandedIDs: e86ca993d88062e48359db4163f6e14d7fe66b7effffff7f
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -964,9 +820,9 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 348
+    x: 275.2
     y: 73.6
-    width: 907
+    width: 980
     height: 439
   m_ViewDataDictionary: {fileID: 0}
   m_ShowContextualTools: 0
@@ -1105,15 +961,15 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 200.8
+    x: 348
     y: 73.6
-    width: 1002
-    height: 399
+    width: 907
+    height: 439
   m_ViewDataDictionary: {fileID: 0}
   m_ViewTransforms:
     m_KeySerializationHelper:
     - {fileID: 7296791378147910968, guid: d057a880f391b174cb1014995eb962ca, type: 2}
-    - {fileID: -7820138658805173167, guid: f9c703b3cd9f79e4e90f93286eb3a48a, type: 2}
+    - {fileID: 8254705098685932546, guid: 0ba953d1f4098f5478ef6e0e9c9cb9ed, type: 2}
     m_ValueSerializationHelper:
     - e00: 0.76841605
       e01: 0
@@ -1148,10 +1004,10 @@ MonoBehaviour:
       e32: 0
       e33: 1
   m_PreviewAnimator: {fileID: 0}
-  m_AnimatorController: {fileID: 9100000, guid: f9c703b3cd9f79e4e90f93286eb3a48a,
+  m_AnimatorController: {fileID: 9100000, guid: 0ba953d1f4098f5478ef6e0e9c9cb9ed,
     type: 2}
   m_BreadCrumbs:
-  - m_Target: {fileID: -7820138658805173167, guid: f9c703b3cd9f79e4e90f93286eb3a48a,
+  - m_Target: {fileID: 8254705098685932546, guid: 0ba953d1f4098f5478ef6e0e9c9cb9ed,
       type: 2}
     m_ScrollPosition: {x: 0, y: 0}
   stateMachineGraph: {fileID: 0}
@@ -1204,20 +1060,20 @@ MonoBehaviour:
     m_SkipHidden: 1
     m_SearchArea: 1
     m_Folders:
-    - Assets/Audio
+    - Assets/Scenes
   m_ViewMode: 1
   m_StartGridSize: 96
   m_LastFolders:
-  - Assets/Audio
+  - Assets/Scenes
   m_LastFoldersGridSize: 96
   m_LastProjectPath: C:\things\HashKot
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 90}
-    m_SelectedIDs: 103f0000
-    m_LastClickedID: 16144
-    m_ExpandedIDs: 00000000c0390000c2390000c439000000ca9a3b
+    m_SelectedIDs: ea3d0000
+    m_LastClickedID: 15850
+    m_ExpandedIDs: 00000000d63d0000d83d0000da3d000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1245,7 +1101,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000c0390000c2390000c4390000
+    m_ExpandedIDs: 00000000d63d0000d83d0000da3d0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1323,9 +1179,9 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 528
-    width: 1260
-    height: 255
+    y: 533.60004
+    width: 1256
+    height: 250
   m_ViewDataDictionary: {fileID: 0}
 --- !u!114 &20
 MonoBehaviour:
@@ -1355,7 +1211,7 @@ MonoBehaviour:
   m_ViewDataDictionary: {fileID: 0}
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: -1720
+  m_LastSelectedObjectID: 15486
 --- !u!114 &21
 MonoBehaviour:
   m_ObjectHideFlags: 52

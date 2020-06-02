@@ -13,7 +13,8 @@ public class HashKot : Unit
     public int pointsSum;
     [SerializeField]
     private Text pointsSumText;
-    private int totalCollectedPoint = 0;
+    public int totalCollectedPoint;
+    public int pythonsToRevenge;
 
     private bool isGroundNear;
     private bool doubleJumped = false;
@@ -38,6 +39,8 @@ public class HashKot : Unit
         collider = GetComponent<Collider2D>();
         pointsSum = 0;
         pointsSumText.text = "0";
+        totalCollectedPoint = 0;
+        pythonsToRevenge = 0;
     }
 
     private void FixedUpdate()
@@ -149,8 +152,7 @@ public class HashKot : Unit
         if (points > 0)
         {
             GetComponentInChildren<SpriteRenderer>().GetComponent<AudioSource>().Play();
-            totalCollectedPoint += points;
-            if (totalCollectedPoint > 99)
+            if ((totalCollectedPoint > 99)&&(pythonsToRevenge == 0))
                 EndGame();
         }
     }

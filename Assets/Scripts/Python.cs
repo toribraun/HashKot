@@ -10,11 +10,14 @@ public class Python : Unit
     private SpriteRenderer sprite;
     private int direction;
     private Random random = new Random();
+    private AudioSource audio;
+    private int stolenPoints;
     
     private void Awake()
     {
         sprite = GetComponentInChildren<SpriteRenderer>();
         direction = -1;
+        stolenPoints = 0;
     }
 
     private void Update()
@@ -45,10 +48,15 @@ public class Python : Unit
             {
                 player.Jump();
                 player.GetComponent<AudioSource>().Play();
+                if (stolenPoints > 0)
+                    player.pythonsToRevenge--;
+                player.UpdatePoints(stolenPoints / 2);
                 Die();
             }
             else
             {
+                if (stolenPoints == 0)
+                    player.pythonsToRevenge++;
                 player.GetDamage(transform.position, GetDamageLevelRandomly());
                 GetComponent<AudioSource>().Play();
             }
@@ -58,6 +66,9 @@ public class Python : Unit
     private int GetDamageLevelRandomly()
     {
         var maxRange = 10;
-        return random.Next(1, maxRange);
+        var minRange = 3;
+        var damage = random.Next(minRange, maxRange);
+        stolenPoints += damage;
+        return damage;
     }
 }

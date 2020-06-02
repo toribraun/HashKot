@@ -16,6 +16,7 @@ public class Point : MonoBehaviour
         var unit = collider.GetComponent<HashKot>();
         if (unit)
         {
+            unit.totalCollectedPoint += cost;
             unit.UpdatePoints(cost);
             Destroy(gameObject);
         }
