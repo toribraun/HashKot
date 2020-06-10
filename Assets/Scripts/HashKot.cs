@@ -13,6 +13,7 @@ public class HashKot : Unit
     public int pointsSum;
     [SerializeField]
     private Text pointsSumText;
+
     public int totalCollectedPoint;
     public int pythonsToRevenge;
 
@@ -183,6 +184,8 @@ public class HashKot : Unit
             SceneManager.LoadScene("MenuWin");
         }
         else
+        {
             SceneManager.LoadScene("MenuLose");
+        }
     }
 }

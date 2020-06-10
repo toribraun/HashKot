@@ -7,6 +7,11 @@ public class TextControllerMenu : MonoBehaviour
     public Text PointsSum;
     [SerializeField] 
     public Text Mark;
+    
+    [SerializeField] 
+    public AudioSource win;
+    [SerializeField] 
+    public AudioSource lose;
     void Start()
     {
         PointsSum.text = $"{GameStates.CurrentPointSum}/100";

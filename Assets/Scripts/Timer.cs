@@ -14,7 +14,10 @@ public class Timer : MonoBehaviour
     private float time = 90F;
     [SerializeField] 
     private HashKot player;
+    [SerializeField] 
+    public AudioSource click;
     private bool isPaused;
+    
     
     public void Start()
     {
@@ -23,6 +26,10 @@ public class Timer : MonoBehaviour
 
     public void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Escape)&&(!isPaused))
+        {
+            Pause();
+        }
         if (!isPaused)
         {
             time -= Time.deltaTime;
@@ -35,6 +42,7 @@ public class Timer : MonoBehaviour
 
     public void Pause()
     {
+        click.Play();
         PauseMenu.SetActive(true);
         Time.timeScale = 0F;
         isPaused = true;
@@ -42,6 +50,7 @@ public class Timer : MonoBehaviour
     
     public void ResumeGame()
     {
+        click.Play();
         PauseMenu.SetActive(false);
         Time.timeScale = 1F;
         isPaused = false;
